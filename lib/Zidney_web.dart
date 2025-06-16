@@ -10,6 +10,7 @@ class ZidneyWeb extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
         return ScreenUtilInit(
+          designSize: const Size(1440, 1024),
           minTextAdapt: true,
           child: GetMaterialApp(
             debugShowCheckedModeBanner: false,
