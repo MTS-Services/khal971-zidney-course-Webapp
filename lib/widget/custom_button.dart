@@ -16,6 +16,7 @@ class CustomButton extends StatelessWidget {
   final BorderRadius borderRadius;
   final Color textColor;
   final BoxBorder? border;
+  final double? fontSize;
 
 
   const CustomButton({
@@ -30,16 +31,17 @@ class CustomButton extends StatelessWidget {
     this.textColor = Colors.white,
     this.onTap,
     this.height,
-    this.width,
+    this.width=250,
     this.border,
+    this.fontSize = AppStyles.fontL,
 
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: height?.h ?? 48.h,
-      width: width?.w ?? double.infinity,
+      height: height,
+      width: width,
       child: GestureDetector(
         onTap: onTap,
         child: Container(
@@ -62,7 +64,7 @@ class CustomButton extends StatelessWidget {
                   buttonText,
                   style: TextStyle(
                     fontWeight: AppStyles.weightBold,
-                    fontSize: AppStyles.fontM.sp,
+                    fontSize: fontSize,
                     color: textColor,
                   ),
                 ),
