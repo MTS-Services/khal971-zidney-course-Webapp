@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:khal971_zidney_course_webapp/Zidney_web.dart';
+import 'package:khal971_zidney_course_webapp/zidney_web.dart';
 
 import 'package:khal971_zidney_course_webapp/main.dart';
 

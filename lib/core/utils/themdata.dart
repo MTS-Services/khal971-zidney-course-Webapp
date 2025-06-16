@@ -4,7 +4,7 @@ import 'app_colors.dart';
 
 ThemeData themData() {
   return ThemeData(
-    fontFamily: 'Futura',
+    fontFamily: 'Futura Bk',
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         foregroundColor: AppColors.chocolate,
