@@ -4,8 +4,9 @@ import 'package:khal971_zidney_course_webapp/core/utils/app_text_styles.dart';
 
 class Question extends StatelessWidget {
   final String title;
+  final double? fontSize;
   final String subTitle;
-  const Question({super.key, required this.title, required this.subTitle});
+  const Question({super.key, required this.title, required this.subTitle, this.fontSize});
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +22,14 @@ class Question extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
             ),
             child: ListTile(
-              title: Text(title,style: AppTextStyle.bold14,),
-              subtitle: Text(subTitle,style: AppTextStyle.regular12,),
+              title: Text(title,style: TextStyle(
+                fontWeight: FontWeight.w400,
+                fontSize: fontSize,
+              ),),
+              subtitle: Text(subTitle,style: TextStyle(
+
+                fontSize: fontSize,
+              ),),
             ),
           ),
         )
