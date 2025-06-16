@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:khal971_zidney_course_webapp/core/utils/app_colors.dart';
+import 'package:khal971_zidney_course_webapp/core/utils/app_style.dart';
 import 'package:khal971_zidney_course_webapp/core/utils/asset_path.dart';
 import 'package:khal971_zidney_course_webapp/views/question_and_quiz/Question.dart';
 import 'package:khal971_zidney_course_webapp/widget/custom_app_bar.dart';
@@ -20,7 +21,7 @@ class _QuestionAndQuizTabState extends State<QuestionAndQuizTab> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20,left: 100,right: 100),
+      padding: const EdgeInsets.only(top: 20, left: 60, right: 60),
       child: Scaffold(
         appBar: CustomAppBar(title: 'Biological Explorations'),
         body: Column(
@@ -35,7 +36,7 @@ class _QuestionAndQuizTabState extends State<QuestionAndQuizTab> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 24,
+                    fontSize: AppStyles.fontXL,
                     fontFamily: 'Futura Hv BT',
                     fontWeight: FontWeight.w400,
                     height: 1.20,
@@ -45,18 +46,24 @@ class _QuestionAndQuizTabState extends State<QuestionAndQuizTab> {
                   spacing: 10,
                   children: [
                     Transform.translate(
-                      offset: Offset(0, 3),
+                      offset: Offset(0, 4),
                       child: SizedBox(
                         height: 58,
                         child: CustomSearchBox(
-                          width: MediaQuery.of(context).size.width * 0.6,
+                          hintText: 'Search',
+                          fontSize: AppStyles.fontM,
+                          width: 200,
+
                         ),
                       ),
                     ),
                     CustomButton(
                       buttonText: 'Add subject',
+                      prefix: Icon(Icons.add_outlined),
                       height: 50,
-                      width: MediaQuery.of(context).size.width * 0.16,
+                      fontSize: AppStyles.fontM,
+                      width: 200,
+
                     ),
                   ],
                 ),
@@ -81,6 +88,7 @@ class _QuestionAndQuizTabState extends State<QuestionAndQuizTab> {
                         height: 50,
                         buttonText: 'Question',
                         width: MediaQuery.of(context).size.width * 0.6,
+                        fontSize: AppStyles.fontM,
                         prefix: SvgPicture.asset(AssetPath.question),
                         backgroundColor: isSelected
                             ? AppColors.primaryColor
@@ -88,7 +96,9 @@ class _QuestionAndQuizTabState extends State<QuestionAndQuizTab> {
                         shadowColor: isSelected
                             ? AppColors.primaryShadow
                             : AppColors.primaryLightColor,
-                        textColor: isSelected ? AppColors.whiteColor : AppColors.blackColor,
+                        textColor: isSelected
+                            ? AppColors.whiteColor
+                            : AppColors.blackColor,
                       ),
                     ),
                     SizedBox(width: 20),
@@ -100,7 +110,9 @@ class _QuestionAndQuizTabState extends State<QuestionAndQuizTab> {
                           });
                         },
                         buttonText: 'Quiz',
+                        height: 50,
                         width: MediaQuery.of(context).size.width * 0.6,
+                        fontSize: AppStyles.fontM,
                         prefix: SvgPicture.asset(AssetPath.quiz),
                         backgroundColor: isSelected
                             ? AppColors.primaryLightColor
@@ -108,18 +120,24 @@ class _QuestionAndQuizTabState extends State<QuestionAndQuizTab> {
                         shadowColor: isSelected
                             ? AppColors.primaryLightColor
                             : AppColors.primaryShadow,
-                        textColor: isSelected ? AppColors.blackColor : AppColors.whiteColor,
+                        textColor: isSelected
+                            ? AppColors.blackColor
+                            : AppColors.whiteColor,
                       ),
                     ),
                   ],
                 ),
               ),
-             ),
+            ),
             Expanded(
               child: ListView.builder(
                 itemCount: 10,
                 itemBuilder: (context, index) {
-                  return Question(title: 'Biological Explorations',subTitle: 'You are: 10th',);
+                  return Question(
+                    title: 'Biological Explorations',
+                    subTitle: 'You are: 10th',
+                    fontSize: AppStyles.fontM,
+                  );
                 },
               ),
             ),

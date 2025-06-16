@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:khal971_zidney_course_webapp/core/utils/app_colors.dart';
+import 'package:khal971_zidney_course_webapp/core/utils/app_style.dart';
 import 'package:khal971_zidney_course_webapp/core/utils/asset_path.dart';
 import 'package:khal971_zidney_course_webapp/views/question_and_quiz/Question.dart';
 import 'package:khal971_zidney_course_webapp/widget/custom_app_bar.dart';
@@ -35,7 +37,7 @@ class _QuestionAndQuizDesktopState extends State<QuestionAndQuizDesktop> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 24,
+                    fontSize: AppStyles.fontXXXL,
                     fontFamily: 'Futura Hv BT',
                     fontWeight: FontWeight.w400,
                     height: 1.20,
@@ -45,26 +47,28 @@ class _QuestionAndQuizDesktopState extends State<QuestionAndQuizDesktop> {
                   spacing: 10,
                   children: [
                     Transform.translate(
-                      offset: Offset(0, 3),
+                      offset: Offset(0, 4),
                       child: SizedBox(
-                        height: 58,
+                        height:  62,
                         child: CustomSearchBox(
-                          width: MediaQuery.of(context).size.width * 0.16,
+                          hintText: 'Search',
+                          fontSize: AppStyles.fontXL,
                         ),
                       ),
                     ),
                     CustomButton(
+                      height: 54,
                       buttonText: 'Add subject',
                       prefix: Icon(Icons.add_outlined),
-                      height: 50,
-                      width: MediaQuery.of(context).size.width * 0.16,
+
+                      fontSize: AppStyles.fontXL,
                     ),
                   ],
                 ),
               ],
             ),
             Container(
-              height: 50,
+              height: 54,
               width: double.infinity,
               color: AppColors.primaryLightColor,
               child: Padding(
@@ -79,9 +83,10 @@ class _QuestionAndQuizDesktopState extends State<QuestionAndQuizDesktop> {
                             isSelected = true;
                           });
                         },
-                        height: 50,
+                        height: 54,
                         buttonText: 'Question',
                         width: MediaQuery.of(context).size.width * 0.6,
+                        fontSize: AppStyles.fontXL,
                         prefix: SvgPicture.asset(AssetPath.question),
                         backgroundColor: isSelected
                             ? AppColors.primaryColor
@@ -101,6 +106,8 @@ class _QuestionAndQuizDesktopState extends State<QuestionAndQuizDesktop> {
                           });
                         },
                         buttonText: 'Quiz',
+                        height: 54,
+                        fontSize: AppStyles.fontXL,
                         width: MediaQuery.of(context).size.width * 0.6,
                         prefix: SvgPicture.asset(AssetPath.quiz),
                         backgroundColor: isSelected
@@ -120,7 +127,7 @@ class _QuestionAndQuizDesktopState extends State<QuestionAndQuizDesktop> {
               child: ListView.builder(
                 itemCount: 10,
                 itemBuilder: (context, index) {
-                  return Question(title: 'Biological Explorations',subTitle: 'You are: 10th',);
+                  return Question(title: 'Biological Explorations',subTitle: 'You are: 10th',fontSize: AppStyles.fontXL,);
                 },
               ),
             ),
