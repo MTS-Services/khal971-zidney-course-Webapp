@@ -49,7 +49,6 @@ class _QuestionAndQuizState extends State<QuestionAndQuiz> {
                       child: SizedBox(
                         height: 58,
                         child: CustomSearchBox(
-                          width: MediaQuery.of(context).size.width * 0.16,
                         ),
                       ),
                     ),
